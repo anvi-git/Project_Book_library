@@ -86,6 +86,11 @@ plt.ylabel('Frequency')
 plt.legend()
 # Show the plot
 plt.show()
+
+```
+![Second hist](notebook_images/second_hist.png)
+```python
+
 this is not a very pleasant histogram. let's try to obtain a plot only with the books published starting from 1900.
 #####
 # filter data for 20th century
@@ -121,6 +126,12 @@ plt.ylabel('Frequency')
 plt.legend()
 # Show the plot
 plt.show()
+
+```
+![Third hist](notebook_images/third_hist.png)
+```python
+
+
 books_data_df = df[['# pages', 'year of publication']]
 # Create the scatter plot (x-y plot)
 sns.scatterplot(data=books_data_df, 
@@ -136,6 +147,11 @@ plt.title('Year of Publication vs Number of Pages')
 
 # Show the plot
 plt.show()
+
+```
+![First plot](notebook_images/first_plot.png)
+```python
+
 books_data_df_20th = df[df['year of publication'] > 1899]
 # Create the scatter plot (x-y plot)
 sns.scatterplot(data=books_data_df_20th, 
@@ -151,4 +167,7 @@ plt.title('Year of Publication (since 1900) vs Number of Pages')
 
 # Show the plot
 plt.show()
+
+```
+![Second plot](notebook_images/second_plot.png)
 ```
