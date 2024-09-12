@@ -170,4 +170,97 @@ plt.show()
 
 ```
 ![Second plot](notebook_images/second_plot.png)
+```python
+# Expand the DataFrame to have one nationality per row
+# Split the 'nationalities' column by comma and explode into separate rows
+df_expanded = df.assign(nationalities=df['nationality'].str.split(' - ')).explode('nationality')
+
+# Remove any extra spaces and convert to lower case for consistency
+df_expanded['nationality'] = df_expanded['nationality'].str.strip().str.lower()
+
+# Count occurrences and filter top nationalities
+nationality_counts = df_expanded['nationalities'].value_counts()
+top_nationalities = nationality_counts.head(5)  # Change 5 to the number of top nationalities you want to display
+
+# Plot pie chart
+plt.figure(figsize=(8, 8))
+plt.pie(top_nationalities, 
+        labels=top_nationalities.index, 
+        autopct='%1.1f%%', 
+        startangle=140, 
+        colors=plt.cm.Paired(range(len(top_nationalities))))
+plt.title('Top Nationalities of Authors')
+plt.savefig('notebook_images/third_plot.png')
+plt.show()
+```
+![Third plot](notebook_images/third_plot.png)
+```python
+# rename columns to avoid LaTeX issues
+df = df.rename(columns={'# pages': 'pages', 'year of publication': 'publication_year'})
+
+# Create scatter plot
+sns.scatterplot(data=df[['pages', 'publication_year', 'nationality']], 
+                x='publication_year', 
+                y='pages', 
+                hue='nationality', 
+                palette="rocket", 
+                size='pages', 
+                sizes=(50, 500), 
+                legend='brief')
+
+
+plt.legend(loc='upper left', bbox_to_anchor=(1, 1), title='Nationality')
+plt.title('Scatter Plot of Number of Pages vs Year of Publication')
+plt.xlabel('Year of Publication')
+plt.ylabel('Number of Pages')
+
+plt.tight_layout()
+
+plt.savefig('notebook_images/fourth_plot.png')
+plt.show()
+```
+![Fourth plot](notebook_images/fourth_plot.png)
+```python
+# Filter DataFrame for 20th century
+df3_20th = df[df['publication_year'] > 1899]
+
+# Calculate the counts of each nationality
+nationality_counts = df['nationality'].value_counts()
+sorted_nationalities = nationality_counts.index
+
+# Use the same palette for scatter plot and legend
+palette = sns.color_palette("icefire", len(sorted_nationalities))
+
+# Create scatter plot
+scatter = sns.scatterplot(data=df3_20th, 
+                          x='publication_year', 
+                          y='pages', 
+                          hue='nationality', 
+                          palette=palette,  # Use the same palette
+                          size='pages', 
+                          sizes=(50, 500))
+
+# Create legend handles based on sorted nationalities and the colors used
+handles = [Line2D([0], 
+                  [0], 
+                  marker='o', 
+                  color='w', 
+                  label=label,
+                  markerfacecolor=palette[i], 
+                  markersize=10)
+           for i, label in enumerate(sorted_nationalities)]
+
+# Add custom legend to the plot
+plt.legend(handles=handles, loc='upper left', bbox_to_anchor=(1, 1), title='Nationalities')
+
+# Add titles and labels
+plt.title('Scatter Plot of Number of Pages vs Year of Publication')
+plt.xlabel('Year of Publication')
+plt.ylabel('Number of Pages')
+
+# Show the plot
+plt.savefig('notebook_images/fifth_plot.png')
+plt.show()
+```
+![Fifth plot](notebook_images/fifth_plot.png)
 ```
