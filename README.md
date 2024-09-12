@@ -51,7 +51,9 @@ plt.ylabel('Frequency')
 plt.legend()
 # Show the plot
 plt.show()
+```
 ![First hist](notebook_images/first_hist.png)
+```python
 
 # now I want to obtain the same information for the year of publication of these books - at the best of my ability ot retrieve
 # the information about the publication year
