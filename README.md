@@ -1,14 +1,21 @@
+This readme will explain how I obtained the plots and histograms which describe my library of physical books.
+I hope you'll enjoy it!
+
+
+
 ```python
+# - # - # - # - # - # - # - # - # - # - # - #
 #import the necessary packages
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-
-# the code below sets the text to LaTEX font
+# - # - # - # - # - # - # - # - # - # - # - #
+# set the text to LaTEX font
 plt.rcParams['text.usetex'] = True
-# the code below sets the default figure and text size for all plots
+# set the default figure, text size and color
+# for ticks and legends
 plt.rcParams['axes.titlesize'] = 20
 plt.rcParams['axes.titleweight'] = 'bold'
 plt.rcParams['axes.titlecolor'] = 'black'
@@ -18,26 +25,36 @@ plt.rcParams['xtick.labelsize'] = 14
 plt.rcParams['ytick.labelsize'] = 14
 plt.rcParams['legend.fontsize'] = 14
 
-# open the .csv file - the "header=0" part sets the first row as header of the dataframe
+# open the .csv file - 
+# the "header=0" part sets the first row 
+# as header of the dataframe
 df = pd.read_csv('book_list.csv', header=0)
+# print the column name
 for i in df.columns:
   print("column name: ", i)
-# now, I don't want to show the last column, i.e. Unnamed:10 --> I will delete it
+# now, I don't want to show the last column, 
+# i.e. Unnamed:10
+# so I will delete it
 df = df.drop(df.columns[-1], axis=1)
-df
-# morevoer, I want the row index to start from 1 and not from 0
+# morevoer, I want the row index to start 
+# from 1 and not from 0
 df = df.reset_index(drop=True)
 df.index += 1
-df
-#now I want to extract some information about the number of pages of these books
-num_pag = df['# pages'] # I create an array from the column of the panda dataframe df['# pages']
+# now I want to extract some information about 
+# the number of pages of these books
+num_pag = df['# pages'] 
+# mean, median, quartiles
 mean_page = num_pag.mean()
 median_page = num_pag.median()
 quartiles_page = num_pag.quantile([0.25,0.75])
-# Plot a histogram of column '# pages'
+# - # - # - # - # - # - # - # - # - # - # - #
+```
+First plot! This will show the number of pages
+```python
+# plot a histogram of column '# pages'
 sns.histplot(df['# pages'], bins=15, kde=False)
 
-# Add lines for mean, median, and quartiles
+# add lines for mean, median, and quartiles
 plt.axvline(mean_page, color='red', linestyle='dashed', linewidth=1, label=f'Mean: {mean_page:.0f}')
 plt.axvline(median_page, color='blue', linestyle='dashed', linewidth=1, label=f'Median: {median_page:.0f}')
 plt.axvline(quartiles_page[0.25], color='orange', linestyle='dashed', linewidth=1, label=f'Q1: {quartiles_page[0.25]:.0f}')
