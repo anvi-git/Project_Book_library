@@ -281,3 +281,40 @@ plt.show()
 ```
 ![Fifth plot](notebook_images/fifth_plot.png)
 ```
+#let's create an histogram with the publisher data 
+# Create a countplot to show the distribution of publishers
+sns.countplot(data=df, x='publisher')
+
+# Rotate x-axis labels if there are many unique publishers
+plt.xticks(rotation=90)
+
+# Show the plot
+plt.show()
+```
+![Sixth plot](notebook_images/stack_bar_publisher.png)
+```
+# Count the occurrences of each publisher
+publisher_counts = df['publisher'].value_counts()
+sorted_publisher = publisher_counts.index
+top_publisher = publisher_counts.head(10)  # Change 5 to the number of top nationalities you want to display
+palette = sns.color_palette("icefire", len(sorted_publisher))
+# Plot pie chart
+wedges, texts, autotexts = plt.pie(top_publisher, 
+                                   autopct='%1.0f%%', 
+                                   startangle=140, 
+                                   colors=palette)
+# Adding a custom legend with publisher names and counts
+legend_labels = [f"{publisher}: {count} books" for publisher, 
+                                                   count in zip(top_publisher.index, 
+                                                                top_publisher.values)]
+plt.legend(wedges, 
+           legend_labels, 
+           title="Publishers", 
+           bbox_to_anchor=(1.05, 1), 
+           loc='upper left')
+
+plt.savefig('notebook_images/pie_chart_publisher.png')
+plt.show()
+```
+![Seventh plot](notebook_images/pie_chart_publisher.png)
+```
