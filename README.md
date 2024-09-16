@@ -134,3 +134,18 @@ plt.show()
 ```
 ![Seventh plot](notebook_images/pie_chart_publisher.png)
 ```
+# Create a new pie chart with the top 10 authors
+# Plot pie chart
+plt.figure(figsize=(8, 8))
+plt.pie(top_authors, 
+        labels=top_authors.index, 
+        autopct='%1.0f%%', 
+        startangle=140, 
+        colors=this_palette)
+plt.title('Top Authors')
+plt.savefig('notebook_images/pie_chart_author.png')
+
+plt.show()
+```
+![Top Authors plot](notebook_images/pie_chart_author.png)
+```
