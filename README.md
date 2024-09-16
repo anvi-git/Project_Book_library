@@ -153,3 +153,10 @@ World map for the authors
 ```
 ![Top Authors plot](notebook_images/world_map.png)
 ```
+Histogram for the total pages written by authors
+```
+![Total pages written by authors](notebook_images/author_pages_histogram.png)
+```
+Histogram for the 10 most prolific authors
+```
+![Prolific Authors](notebook_images/prolific_authors.png)
