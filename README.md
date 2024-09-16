@@ -149,3 +149,7 @@ plt.show()
 ```
 ![Top Authors plot](notebook_images/pie_chart_author.png)
 ```
+World map for the authors
+```
+![Top Authors plot](notebook_images/world_map.png)
+```
