@@ -160,3 +160,34 @@ Histogram for the total pages written by authors
 Histogram for the 10 most prolific authors
 ```
 ![Prolific Authors](notebook_images/prolific_authors.png)
+``` 
+Histogram for the 10 most prolific authors
+``` 
+![Prolific Authors](notebook_images/prolific_authors_by_num_books.png)
+``` 
+Timeline of Books Published by Authors with more than one book
+```
+![Prolific Authors](notebook_images/timeline.png)
+``` 
+Timeline of Books Published by Authors with more than one book (Excluding Shared Books)
+```
+![Prolific Authors](notebook_images/timeline_adjusted.png)
+```
+Timeline of Books Published by Authors with more than one book (Excluding Shared Books) and divided
+```
+![Prolific Authors](notebook_images/timeline_adjusted_divided.png)
+```
+Word Visualizer - Book Titles
+```
+![Prolific Authors](notebook_images/words_book_titles.png)
+```
+Word Histogram - Book Titles
+```
+![Prolific Authors](notebook_images/words_book_titles_hist.png)
+```
+Word Histogram - Book Titles
+```
+![Prolific Authors](notebook_images/sex_of_authors.png)
+
+
+
