@@ -9,7 +9,7 @@ vita e morte dell'ordine dei templari,326,2005,Alain Demurger,Il giornale,1939,/
 relatività,326,1916,albert einstein,bollati boringhieri,1879,1955,Germany,m,italiano
 il significato della relatività - il mondo come io lo vedo,256,1934,albert einstein,newton compton,1879,1955,Germany,m,italiano
 la rivoluzione francese - volume secondo,511,1960,albert mathiez - georges lefebvre,einaudi,"1874, 1874","1932, 1959",France,m,italiano
-romanzi e racconti,497,/,Aleksandr Sergeevic Puskin,garzanti,1799,1837,Russia,m,italiano
+romanzi e racconti,497,V.Y.,Aleksandr Sergeevic Puskin,garzanti,1799,1837,Russia,m,italiano
 una giornata di ivan denisovic,174,1963,aleksandr solzenicyn,einaudi,1918,2008,Russia ,m,italiano
 arcipelago gulag,607,1973,aleksandr solzenicyn,mondadori,1918,2008,Russia ,m,italiano
 la voglia dei cazzi ,139,2013,alessandro barbero,edizioni mercuriao,1959,/,Italy,m,italiano
@@ -60,7 +60,7 @@ contatto cosmico ,304,1973,carl sagan,rizzoli,1934,1996,United States of America
 storia dell'uomo,435,1954,carleton s. coon,garzanti,1904,1981,United States of America,m,italiano
 helgoland,227,2020,carlo rovelli,adelphi,1956,/,Italy,m,italiano
 il volo spaziale,187,1969,cesare cremona,Edizioni RAI,/,/,Italy,m,italiano
-le poesie,338,/,cesare pavese,einaudi,1908,1950,Italy,m,italiano
+le poesie,338,V.Y.,cesare pavese,einaudi,1908,1950,Italy,m,italiano
 le rive di un altro mare,148,1971,chad oliver,urania (mondadori),1928,1993,United States of America,m,italiano
 le spirali del tempo,192,1957,chad oliver,urania (mondadori),1928,1993,United States of America,m,italiano
 l'origine delle specie,580,1859,charles darwin,bollati boringhieri,1809,1882,England,m,italiano
@@ -100,7 +100,7 @@ guida galattica per gli autostoppisti,645,1992,douglas adams,mondadori,1952,2001
 "godel, escher, bach",852,1979,douglas r. hofstadter,adelphi,1977,/,United States of America,m,italiano
 fuga dal labirinto ,185,1968,e.c. tubb,longanesi,1919,2010,England,m,italiano
 la marcia,365,2005,e.l. doctorow,mondadori,1931,2015,United States of America,m,italiano
-racconti ,289,/,Edgar Allan Poe,la biblioteca di repubblica,1809,1849,United States of America,m,italiano
+racconti ,289,V.Y.,Edgar Allan Poe,la biblioteca di repubblica,1809,1849,United States of America,m,italiano
 Racconti del terrore,125,1845,Edgar Allan Poe,newton compton,1809,1949,United States of America,m,italiano
 eureka,147,1848,Edgar Allan Poe,theoria,1809,1849,United States of America,m,italiano
 i manoscritti del mar morto,147,1958,edmund wilson,einaudi,1895,1972,United States of America,m,italiano
@@ -130,7 +130,7 @@ il trono dei berserker,191,1985,fred saberhagen,urania (mondadori),1930,2007,Uni
 alpha aleph,134,1972,frederi k pohl,urania (mondadori),1919,2013,United States of America,m,italiano
 gladiatore in legge,272,1974,frederi k pohl - c.m. kornbluth,libra editrice,1919-1923,2013-1958,United States of America,m,italiano
 il medioevo (1100-1350),456,1962,friedrich heer,mondadori,1916,1983,Austria,m,italiano
-idilli di messina - la gaia scienza e scelta di frammenti postumi,436,/,friedrich nietzsche,mondadori,1844,1900,Germany,m,italiano
+idilli di messina - la gaia scienza e scelta di frammenti postumi,436,V.Y.,friedrich nietzsche,mondadori,1844,1900,Germany,m,italiano
 homo faber,284,1957,frisch,garzanti,1911,1991,Switzerland,m,italiano
 il tao della fisica,381,1975,fritjof capra,adelphi,1939,/,Austria,m,italiano
 cronaca di una morte annunciata,90,1991,gabriel garcia marquez,einaudi,1927,2014,Colombia,m,italiano
@@ -440,7 +440,7 @@ parlo svedese,216,1973,VV.AA.,antonio vallardi editore,/,/,/,/,italiano
 cosmologie a confronto,216,1973,VV.AA.,bollati boringhieri, /,/,/,m,italiano
 lettere di condannati a morte della resistenza italiana,379,1952,VV.AA.,einaudi,/,/,/,/,italiano
 teorie cosmologiche rivali,78,1960,VV.AA.,einaudi,/,/,/,/,italiano
-liriche cinesi,250,/,VV.AA.,einaudi,/,/,/,m,italiano
+liriche cinesi,250,V.Y.,VV.AA.,einaudi,/,/,/,m,italiano
 fiabe finlandesi,224,2021,VV.AA.,iperborea,/,/,/,/,italiano
 fiabe svedesi,224,2017,VV.AA.,iperborea,/,/,/,/,italiano
 antologia internazionale di fantascienza,294,1987,VV.AA.,nord,/,/,/,/,italiano
@@ -483,8 +483,36 @@ la linea d'ombra,158,1916,joseph conrad,la biblioteca di repubblica,1857,1924,Po
 in un paese bruciato dal sole,367,2000,bill bryson,tea,1951,/,United States of America,m,italiano
 memorie da una casa di morti,341,1862,fedor m. dostoevskij,sansoni,1821,1881,Russia,m,italiano
 shogun,905,1975,james clavell,bompiani,1921,1994,Australia,m,italiano
-"bartleby, lo scrivano - benito cereno",151,1853,herman melville,garzanti,1819,1891,United States of America,m,italiano
+"bartleby, lo scrivano - benito cereno",151,1853 - 1855,herman melville,garzanti,1819,1891,United States of America,m,italiano
 padri e figli,221,1862,ivan turgenev,mondadori,1818,1883,Russia,m,italiano
 pigmalione,154,1912,bernard shaw,mondadori,1859,1950,Ireland,m,italiano
 i racconti di nick adams,300,1972,ernest hemingway,mondadori,1899,1961,United States of America,m,italiano
 la riforma protestante,264,1972,roland h. bainton,einaudi,1894,1984,England,m,italiano
+morte nel pomeriggio,390,1932,ernest hemingway,mondadori,1899,1961,United States of America,m,italiano
+la terra desolata,237,1922,t.s. eliot,BUR,1888,1965,United States of America,m,italiano
+prateria,682,1991,william least heat-moon,einaudi,1939,/,United States of America,m,italiano
+doppio sogno,95,1926,arthur schnitzler,la biblioteca di repubblica,1862,1931,Austria,m,italiano
+i fiori blu,223,1965,raymond queneau,la biblioteca di repubblica,1903,1976,France,m,italiano
+orbital,137,2024,samantha harvey,vintage,1975,/,England,f,english
+Ýmislegt um risafurur og tímann,214,2001,jon kalman stefansson,bjartur,1963,/,Iceland,m,english
+vedic mathematics for schools book I,134,1994,j.t. glover,motilal banarsidass,/,/,/,m,english
+l'arte d'amare,167,1956,e. from ,il saggiatore,1900,1980,Germany - United States of America,m,italiano
+dedalus,367,1916,james joyce,mondadori,1882,1941,Ireland,m,italiano
+blues di bay city e altri racconti,246,1937,raymond chandler,feltrinelli,1888,1959,United States of America,m,italiano
+la forza del carattere,321,1999,james hillman,adelphi,1926,2011,United States of America,m,italiano
+il tempo continuo della storia,155,2014,jacques le goff,editori laterza,1924,2014,France,m,italiano
+q,677,1999,luther blissett,einaudi,/,/,/,m,italiano
+da animal a dei - breve storia dell'umanità,531,2011,yuval noah harari,bompiani,1976,/,Israel,m,italiano
+la rete della vita ,363,1996,fritjof capra,bur,1939,/,Austria,m,italiano
+storia naturale della religione,149,1757,david hume,editori laterza,1711,1776,Scotland,m,italiano
+lavoro e tecnica nel medioevo,263,1959,marc bloch,editori laterza,1886,1944,France,m,italiano
+l'uomo e l'ambiente nel medioevo,114,1992,vito fumagalli,editori laterza,1938,1992,Italy,m,italiano
+storia della scienza moderna,337,1998,maurizio mamiani,editori laterza,1942,2002,Italy,m,italiano
+ricerca sull'intelletto umano,303,1748,david hume,editori laterza,1711,1776,Scotland,m,italiano
+l'utopia,134,1516,thomas more,editori laterza,1478,1535,England,m,italiano
+prometeo liberato,751,1964,david s. landes,editori laterza,1924,2013,United States of America,m,italiano
+il messaggero,303,2008,kader abdolah,iperborea,1954,/,Iran,m,italiano
+storia del pensiero greco,664,1923,leon robin,mondadori,1866,1947,France,m,italiano
+il mio primo sottomarino giallo,413,2024,jon kalman stefansson,iperborea,1963,/,Iceland,m,italiano
+furore,415,1939,john steinbeck,la biblioteca di repubblica,1902,1968,United States of America,m,italiano
+la donna mancina,90,1976,peter handke,la biblioteca di repubblica,1942,/,Austria,m,italiano
