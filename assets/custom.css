@@ -1,0 +1,109 @@
+/* ============================================================
+   Bookshelf Dashboard — Our World in Data style
+   Loaded automatically by Dash from assets/custom.css
+   ============================================================ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+  background: #f7f6f2;
+  color: #28251d;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── KPI cards ──────────────────────────────────────── */
+.kpi-card {
+  background: #ffffff;
+  border: 1px solid #dcd9d5;
+  border-radius: 6px;
+  padding: 18px 24px;
+  min-width: 150px;
+  flex: 1;
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.kpi-card:hover {
+  box-shadow: 0 6px 20px rgba(1,105,111,.13);
+  transform: translateY(-2px);
+}
+.kpi-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #7a7974;
+  margin-bottom: 6px;
+}
+.kpi-value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #01696f;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+/* ── Chart cards ───────────────────────────────────── */
+.chart-card {
+  background: #ffffff;
+  border: 1px solid #dcd9d5;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow .25s ease;
+}
+.chart-card:hover {
+  box-shadow: 0 4px 16px rgba(1,105,111,.10);
+}
+
+/* ── Filter labels ─────────────────────────────────── */
+.filter-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #7a7974;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* ── Section title ─────────────────────────────────── */
+.section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #28251d;
+  border-bottom: 2px solid #01696f;
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+/* ── Divider ────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid #dcd9d5;
+}
+
+/* ── DataTable overrides ────────────────────────────── */
+.dash-table-container .dash-spreadsheet-container
+  .dash-spreadsheet-inner th {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  background-color: #01696f !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 14px !important;
+}
+.dash-table-container .dash-spreadsheet-container
+  .dash-spreadsheet-inner td {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 13px !important;
+  color: #28251d !important;
+  border-color: #dcd9d5 !important;
+  padding: 8px 14px !important;
+}
