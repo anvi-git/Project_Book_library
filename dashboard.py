@@ -74,8 +74,6 @@ CHART_LAYOUT = dict(
 )
 
 # ── 3. App ──────────────────────────────────────────────────
-# CSS is loaded automatically from assets/custom.css
-# Fonts are loaded via external_stylesheets
 app = Dash(
     __name__,
     title="Bookshelf Dashboard",
@@ -91,7 +89,6 @@ app.layout = html.Div([
     # ── Header ──────────────────────────────────────────────
     html.Div([
         html.Div([
-            # Mini bar-chart logo
             html.Div([
                 html.Div(style={"width": "10px", "height": "36px",
                                 "background": ACCENT, "borderRadius": "2px",
@@ -169,61 +166,40 @@ app.layout = html.Div([
 
     # ── Charts ──────────────────────────────────────────────
     html.Div([
-        # Row 1
         html.Div([
-            html.Div([dcc.Graph(id="hist-pages",
-                                config={"displayModeBar": False})],
-                     className="chart-card",
-                     style={"flex": "1", "minWidth": "320px"}),
-            html.Div([dcc.Graph(id="hist-year",
-                                config={"displayModeBar": False})],
-                     className="chart-card",
-                     style={"flex": "1", "minWidth": "320px"}),
+            html.Div([dcc.Graph(id="hist-pages",  config={"displayModeBar": False})],
+                     className="chart-card", style={"flex": "1", "minWidth": "320px"}),
+            html.Div([dcc.Graph(id="hist-year",   config={"displayModeBar": False})],
+                     className="chart-card", style={"flex": "1", "minWidth": "320px"}),
         ], style={"display": "flex", "gap": "16px",
                   "marginBottom": "16px", "flexWrap": "wrap"}),
 
-        # Row 2
         html.Div([
-            html.Div([dcc.Graph(id="scatter-main",
-                                config={"displayModeBar": False})],
-                     className="chart-card",
-                     style={"flex": "2", "minWidth": "400px"}),
-            html.Div([dcc.Graph(id="pie-country",
-                                config={"displayModeBar": False})],
-                     className="chart-card",
-                     style={"flex": "1", "minWidth": "300px"}),
+            html.Div([dcc.Graph(id="scatter-main", config={"displayModeBar": False})],
+                     className="chart-card", style={"flex": "2", "minWidth": "400px"}),
+            html.Div([dcc.Graph(id="pie-country",  config={"displayModeBar": False})],
+                     className="chart-card", style={"flex": "1", "minWidth": "300px"}),
         ], style={"display": "flex", "gap": "16px",
                   "marginBottom": "16px", "flexWrap": "wrap"}),
 
-        # Row 3
         html.Div([
-            html.Div([dcc.Graph(id="bar-authors",
-                                config={"displayModeBar": False})],
-                     className="chart-card",
-                     style={"flex": "1", "minWidth": "320px"}),
-            html.Div([dcc.Graph(id="bar-lang",
-                                config={"displayModeBar": False})],
-                     className="chart-card",
-                     style={"flex": "1", "minWidth": "320px"}),
+            html.Div([dcc.Graph(id="bar-authors",  config={"displayModeBar": False})],
+                     className="chart-card", style={"flex": "1", "minWidth": "320px"}),
+            html.Div([dcc.Graph(id="bar-lang",     config={"displayModeBar": False})],
+                     className="chart-card", style={"flex": "1", "minWidth": "320px"}),
         ], style={"display": "flex", "gap": "16px",
                   "marginBottom": "16px", "flexWrap": "wrap"}),
 
-        # Row 4
         html.Div([
-            html.Div([dcc.Graph(id="tree-publisher",
-                                config={"displayModeBar": False})],
-                     className="chart-card",
-                     style={"flex": "2", "minWidth": "400px"}),
-            html.Div([dcc.Graph(id="donut-sex",
-                                config={"displayModeBar": False})],
-                     className="chart-card",
-                     style={"flex": "1", "minWidth": "260px"}),
+            html.Div([dcc.Graph(id="tree-publisher", config={"displayModeBar": False})],
+                     className="chart-card", style={"flex": "2", "minWidth": "400px"}),
+            html.Div([dcc.Graph(id="donut-sex",      config={"displayModeBar": False})],
+                     className="chart-card", style={"flex": "1", "minWidth": "260px"}),
         ], style={"display": "flex", "gap": "16px",
                   "marginBottom": "28px", "flexWrap": "wrap"}),
 
     ], style={"padding": "0 40px"}),
 
-    # ── Book table ───────────────────────────────────────────
     html.Div([
         html.Span("Book list", className="section-title"),
         html.Div(id="table-container"),
@@ -287,6 +263,7 @@ def update_kpis(langs, sexes, year_range):
 def update_charts(langs, sexes, year_range):
     d = apply_filters(langs, sexes, year_range)
 
+    # ── histogram: pages ──────────────────────────────────
     fig_pages = px.histogram(
         d.dropna(subset=["pages"]), x="pages", nbins=20,
         title="Distribution of pages",
@@ -297,6 +274,7 @@ def update_charts(langs, sexes, year_range):
                              hovertemplate="<b>%{x} pages</b><br>Books: %{y}<extra></extra>")
     fig_pages.update_layout(**CHART_LAYOUT, bargap=0.06)
 
+    # ── histogram: year ───────────────────────────────────
     d_yr = d.dropna(subset=["year_pub"])
     d_yr = d_yr[d_yr["year_pub"] >= 1800]
     fig_year = px.histogram(
@@ -309,6 +287,7 @@ def update_charts(langs, sexes, year_range):
                             hovertemplate="<b>%{x}</b><br>Books: %{y}<extra></extra>")
     fig_year.update_layout(**CHART_LAYOUT, bargap=0.06)
 
+    # ── scatter ───────────────────────────────────────────
     d_sc = d.dropna(subset=["pages", "year_pub"])
     d_sc = d_sc[d_sc["year_pub"] >= 1800]
     fig_scatter = px.scatter(
@@ -324,6 +303,7 @@ def update_charts(langs, sexes, year_range):
     )
     fig_scatter.update_layout(**CHART_LAYOUT, legend_title_text="Country")
 
+    # ── pie: top 10 countries ─────────────────────────────
     top_c = d["country_clean"].value_counts().head(10)
     fig_pie = go.Figure(go.Pie(
         values=top_c.values, labels=top_c.index, hole=0.42,
@@ -335,6 +315,7 @@ def update_charts(langs, sexes, year_range):
     fig_pie.update_layout(**CHART_LAYOUT, title_text="Top 10 author nationalities",
                            showlegend=False)
 
+    # ── bar: top 15 authors ──────────────────────────────
     top_auth = (
         d[d["author_clean"].notna()]
         .groupby("author_clean")
@@ -353,12 +334,16 @@ def update_charts(langs, sexes, year_range):
     fig_auth.update_traces(
         marker_line_color="white", marker_line_width=0.8,
         hovertemplate="<b>%{y}</b><br>Books: %{x}<br>Total pages: %{customdata[0]:,}<extra></extra>")
-    fig_auth.update_layout(**CHART_LAYOUT,
-                            yaxis=dict(categoryorder="total ascending",
-                                       showgrid=False,
-                                       tickfont=dict(size=12, color=TEXT_MAIN)),
-                            coloraxis_showscale=False)
+    # FIX: update_layout(**CHART_LAYOUT) already contains 'yaxis';
+    #      use update_yaxes() separately to override without key conflict.
+    fig_auth.update_layout(**CHART_LAYOUT, coloraxis_showscale=False)
+    fig_auth.update_yaxes(
+        categoryorder="total ascending",
+        showgrid=False,
+        tickfont=dict(size=12, color=TEXT_MAIN),
+    )
 
+    # ── bar: language ──────────────────────────────────────
     lang_counts = d["language"].value_counts().reset_index()
     lang_counts.columns = ["language", "count"]
     fig_lang = px.bar(
@@ -372,6 +357,7 @@ def update_charts(langs, sexes, year_range):
                             hovertemplate="<b>%{x}</b><br>Books: %{y}<extra></extra>")
     fig_lang.update_layout(**CHART_LAYOUT, coloraxis_showscale=False)
 
+    # ── treemap: publishers ───────────────────────────────
     pub_counts = (
         d[d["publisher_clean"].notna()]
         .groupby("publisher_clean").size()
@@ -392,6 +378,7 @@ def update_charts(langs, sexes, year_range):
     )
     fig_tree.update_layout(**CHART_LAYOUT, coloraxis_showscale=False)
 
+    # ── donut: sex ────────────────────────────────────────
     sex_map = {"m": "Male", "f": "Female"}
     sex_counts = d["sex"].map(sex_map).value_counts().reset_index()
     sex_counts.columns = ["sex", "count"]
@@ -405,6 +392,7 @@ def update_charts(langs, sexes, year_range):
     fig_sex.update_layout(**CHART_LAYOUT, title_text="Authors by sex",
                            showlegend=False)
 
+    # ── table ─────────────────────────────────────────────
     table_df = (
         d[["title", "author_clean", "pages", "year of publication",
            "country_clean", "publisher_clean", "language"]]
